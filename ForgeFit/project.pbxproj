@@ -1,0 +1,212 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		03A1B00C2CAFFFF100ABCDEF /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 03A1B00B2CAFFFF100ABCDEF; };
+		03A1B0062CAFFFF100ABCDEF /* ForgeFitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1B00B2CAFFFF100ABCDEF; };
+		03A1B0152CAFFFF300ABCDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A1B0142CAFFFF300ABCDEF; };
+	};
+	/* Begin PBXFileReference section */
+	03A1B0002CAFFFF100ABCDEF /* ForgeFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForgeFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+	03A1B00B2CAFFFF100ABCDEF /* ForgeFitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgeFitApp.swift; sourceTree = "<group>"; };
+	03A1B0142CAFFFF300ABCDEF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+	03A1B01B2CAFFFF300ABCDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+	/* End PBXFileReference section */
+	/* Begin PBXFrameworksBuildPhase section */
+	03A1B00F2CAFFFF100ABCDEF /* Frameworks */ = {
+		isa = PBXFrameworksBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+	/* End PBXFrameworksBuildPhase section */
+	/* Begin PBXGroup section */
+	03A1B0012CAFFFF100ABCDEF = {
+		isa = PBXGroup;
+		children = (
+			03A1B00C2CAFFFF100ABCDEF /* ForgeFit */,
+			03A1B0002CAFFFF100ABCDEF /* Products */,
+		);
+		sourceTree = "<group>";
+	};
+	03A1B0002CAFFFF100ABCDEF /* Products */ = {
+		isa = PBXGroup;
+		children = (
+			03A1B0002CAFFFF100ABCDEF /* ForgeFit.app */,
+		);
+		name = Products;
+		sourceTree = "<group>";
+	};
+	03A1B00C2CAFFFF100ABCDEF /* ForgeFit */ = {
+		isa = PBXGroup;
+		children = (
+			03A1B00B2CAFFFF100ABCDEF /* ForgeFitApp.swift */,
+			03A1B01B2CAFFFF300ABCDEF /* Assets.xcassets */,
+		);
+		path = ForgeFit;
+		sourceTree = "<group>";
+	};
+	/* End PBXGroup section */
+	/* Begin PBXNativeTarget section */
+	03A1B0002CAFFFF100ABCDEF /* ForgeFit */ = {
+		isa = PBXNativeTarget;
+		buildConfigurationList = 03A1B0282CAFFFF300ABCDEF /* Build configuration list for PBXNativeTarget "ForgeFit" */;
+		buildPhases = (
+			03A1B0032CAFFFF100ABCDEF /* Sources */,
+			03A1B00F2CAFFFF100ABCDEF /* Frameworks */,
+			03A1B0122CAFFFF100ABCDEF /* Resources */,
+		);
+		buildRules = (
+		);
+		dependencies = (
+		);
+		name = ForgeFit;
+		productName = ForgeFit;
+		productReference = 03A1B0002CAFFFF100ABCDEF /* ForgeFit.app */;
+		productType = "com.apple.product-type.application";
+	};
+	/* End PBXNativeTarget section */
+	/* Begin PBXProject section */
+	03A1B0012CAFFFF100ABCDEF /* Project object */ = {
+		isa = PBXProject;
+		attributes = {
+			BuildIndependentTargetsInParallel = 1;
+			LastSwiftUpdateCheck = 1600;
+			LastUpgradeCheck = 1600;
+			TargetAttributes = {
+				03A1B0002CAFFFF100ABCDEF = {
+					CreatedOnToolsVersion = 16.0;
+				};
+			};
+		};
+		buildConfigurationList = 03A1B0042CAFFFF100ABCDEF /* Build configuration list for PBXProject "ForgeFit" */;
+		compatibilityVersion = "Xcode 14.0";
+		developmentRegion = en;
+		hasScannedForEncodings = 0;
+		knownRegions = (
+			en,
+			Base,
+		);
+		mainGroup = 03A1B0012CAFFFF100ABCDEF;
+		projectDirPath = "";
+		projectRoot = "";
+		targets = (
+			03A1B0002CAFFFF100ABCDEF /* ForgeFit */,
+		);
+	};
+	/* End PBXProject section */
+	/* Begin PBXResourcesBuildPhase section */
+	03A1B0122CAFFFF100ABCDEF /* Resources */ = {
+		isa = PBXResourcesBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+			03A1B0152CAFFFF300ABCDEF /* LaunchScreen.storyboard in Resources */,
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+	/* End PBXResourcesBuildPhase section */
+	/* Begin PBXSourcesBuildPhase section */
+	03A1B0032CAFFFF100ABCDEF /* Sources */ = {
+		isa = PBXSourcesBuildPhase;
+		buildActionMask = 2147483647;
+		files = (
+			03A1B0062CAFFFF100ABCDEF /* ForgeFitApp.swift in Sources */,
+		);
+		runOnlyForDeploymentPostprocessing = 0;
+	};
+	/* End PBXSourcesBuildPhase section */
+	/* Begin XCBuildConfiguration section */
+	03A1B0052CAFFFF100ABCDEF /* Debug */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			SDKROOT = iphoneos;
+			SWIFT_VERSION = 5.0;
+		};
+		name = Debug;
+	};
+	03A1B0062CAFFFF100ABCDEF /* Release */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			SDKROOT = iphoneos;
+			SWIFT_VERSION = 5.0;
+		};
+		name = Release;
+	};
+	03A1B0272CAFFFF300ABCDEF /* Debug */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			GENERATE_INFOPLIST_FILE = YES;
+			INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+			INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			LD_RUNPATH_SEARCH_PATHS = (
+				"$(inherited)",
+				"@executable_path/Frameworks",
+			);
+			MARKETING_VERSION = 0.1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.forgefit.app;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = 1;
+		};
+		name = Debug;
+	};
+	03A1B0282CAFFFF300ABCDEF /* Release */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			GENERATE_INFOPLIST_FILE = YES;
+			INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+			INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+			INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			LD_RUNPATH_SEARCH_PATHS = (
+				"$(inherited)",
+				"@executable_path/Frameworks",
+			);
+			MARKETING_VERSION = 0.1.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.forgefit.app;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = 1;
+		};
+		name = Release;
+	};
+	/* End XCBuildConfiguration section */
+	/* Begin XCConfigurationList section */
+	03A1B0042CAFFFF100ABCDEF /* Build configuration list for PBXProject "ForgeFit" */ = {
+		isa = XCConfigurationList;
+		buildConfigurations = (
+			03A1B0052CAFFFF100ABCDEF /* Debug */,
+			03A1B0062CAFFFF100ABCDEF /* Release */,
+		);
+		defaultConfigurationIsVisible = 0;
+		defaultConfigurationName = Release;
+	};
+	03A1B0282CAFFFF300ABCDEF /* Build configuration list for PBXNativeTarget "ForgeFit" */ = {
+		isa = XCConfigurationList;
+		buildConfigurations = (
+			03A1B0272CAFFFF300ABCDEF /* Debug */,
+			03A1B0282CAFFFF300ABCDEF /* Release */,
+		);
+		defaultConfigurationIsVisible = 0;
+		defaultConfigurationName = Release;
+	};
+	/* End XCConfigurationList section */
+	};
+	rootObject = 03A1B0012CAFFFF100ABCDEF /* Project object */;
+}

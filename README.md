@@ -1,29 +1,56 @@
 # ForgeFit
 
-ForgeFit is a native SwiftUI training companion foundation for iOS 17+ (target deployment can be set to iOS 27). It has a polished dark-first theme with a light-mode option, onboarding/profile, dashboard, exercise search and filters, exercise details and variants, workout logging, plans, progress/streak/PR calculations, and an AI coach seam backed by a safe local mock.
+ForgeFit is a native SwiftUI training companion for iOS 17+ (target deployment can be set to iOS 27). It features a polished dark-first theme with light-mode option, onboarding/profile, dashboard, exercise search and filters, exercise details and variants, workout logging with sets/reps/weight, rest timer, plans, progress/streak/PR calculations, and an AI coach seam backed by a safe local mock.
 
 ## Run
 
-1. Open the repository in Xcode 15+ and choose an iOS Simulator (iOS 17 or later).
-2. For the Swift Package foundation, run `swift test`; the package includes `ForgeFitCore` and a guarded SwiftUI `ForgeFitApp` executable.
-3. To ship an app bundle, create an iOS App target named `ForgeFitApp` in Xcode, add `Sources/ForgeFitApp/ForgeFitApp.swift`, and link the `ForgeFitCore` local package target. Set the deployment target to iOS 17 (or iOS 27 when available).
+1. **Open in Xcode**: Clone the repo and open the `ForgeFit/` directory as an Xcode project (File > Open, select the top-level folder with `ForgeFit/`, `Sources/`, etc.).
+2. **Select target and simulator**: In Xcode, ensure scheme `ForgeFit` is selected, choose an iOS Simulator (iPhone 14 Pro, iOS 17+), and press Run (Cmd+R).
+3. **First launch**: You'll see the onboarding screen—fill in your name, choose your level, then tap "Start forging".
+4. **Test locally**: Tap "Start workout" to log a workout, browse exercises in "Exercises", check your streak in "Progress".
 
-The UI is guarded with `canImport(SwiftUI)` so core models, services, and tests remain runnable on non-Apple CI. Local persistence uses a small Codable file in Application Support. SwiftData can be introduced behind an iOS 17 availability boundary when the app target adopts a persistent model container.
+## Project structure
+
+- `ForgeFit/`: Xcode iOS app project
+  - `ForgeFitApp.swift`: SwiftUI app, navigation, all UI screens
+  - `LaunchScreen.storyboard`, `Info.plist`, `Assets.xcassets/`
+  - `project.pbxproj`: Xcode project configuration
+- `Sources/ForgeFitCore/`: Swift Package library (iOS/macOS compatible)
+  - `Models.swift`: Codable domain models, seeded exercises/variants, tutorial placeholders, workout plans/rest days
+  - `Services.swift`: Actor-isolated `FitnessStore` for local persistence, `AICoach` protocol with `MockAICoach`
+  - `ForgeFitCore.swift`: Calculations (streak for completed workouts only, volume, personal record)
+- `Tests/ForgeFitTests/`: Core unit tests for streak, volume, and PR logic
 
 ## Product foundation
 
-- `ForgeFitCore/Models.swift`: Codable domain models, representative seeded exercises/variants, tutorial placeholders, plan/rest-day models, and streak, volume, and personal-record calculations. Streaks count completed workout days only.
-- `ForgeFitCore/Services.swift`: actor-isolated local store and `AICoach` protocol with `MockAICoach`.
-- `ForgeFitApp/ForgeFitApp.swift`: navigation, theme, onboarding, library, workout session, plans, progress, and coach placeholder.
+- **Navigation**: TabView with Today, Exercises, Plans, Progress, Coach screens
+- **Dark premium theme**: Accent color (orange-red), card backgrounds, light-mode support via prefersDarkMode
+- **Onboarding**: Name/level picker stored in UserDefaults, triggers app load from local persistence
+- **Dashboard**: Streak counter (completed-day only), workout history, activity log, focus card placeholder
+- **Exercise library**: Full-text search, category filters, detail views with instructions and variants
+- **Workout logging**: Select exercises, edit sets (reps/weight/RPE), toggle completion, 90-second rest timer
+- **Plans**: Placeholder cards (Foundation, Strength Builder, Move Daily); model structure ready for builder
+- **Progress**: Streak display, total volume, personal records by exercise
+- **AI Coach**: Placeholder prompt interface; mock returns static training advice until backend connected
+- **Persistence**: UserDefaults + Codable JSON file in Application Support; ready for SwiftData upgrade
 
 ## Next steps / roadmap
 
-- Add an Xcode app target and app icons, launch screen, accessibility audit, and signing/team settings.
-- Replace JSON persistence with SwiftData migrations and optional CloudKit sync.
-- Add authenticated backend endpoints, privacy controls, analytics consent, and real AI coach retrieval/function calling. Never ship API keys in the app; proxy requests through a secured backend.
-- Add HealthKit (with explicit permission), wearable workout import, richer charts, timers, rest notifications, plan editor, and offline conflict handling.
-- Expand exercise media, form cues, adaptive programming, and tests for timezone/DST edge cases.
+- Create an Apple Developer account, sign the app with your team, and deploy to physical device or TestFlight.
+- Replace local persistence with SwiftData (iOS 17+) and optional CloudKit sync for multi-device support.
+- Add authenticated backend endpoints for real AI coach (LLM integration, function calling for plan generation).
+- Add HealthKit (with explicit permission), wearable workout import, richer charts (volume/PR over time), adaptive programming.
+- Expand exercise media library (videos, form cues), offline conflict handling, comprehensive timezone/DST tests.
 
 ## Content, licensing, and privacy
 
-Seeded exercise names and instructional copy are original starter content and should be reviewed by a qualified coach before production use. License any images, videos, fonts, or third-party exercise databases separately. Collect the minimum profile data, document retention/deletion, and provide a clear privacy policy before release. No secrets or credentials are included.
+Seeded exercise names, instructions, and cues are original starter content and should be reviewed by a qualified coach before production use. License any images, videos, fonts, or third-party exercise databases separately. Collect minimum profile data, document retention/deletion policies, and provide a clear privacy policy before release. No secrets or credentials are included in the source.
+
+## Testing
+
+From the repo root:
+```bash
+swift test
+```
+
+All core tests (streak, volume, personal record) pass without Xcode. The iOS app itself (`ForgeFit/`) builds and runs in Xcode 15+.
